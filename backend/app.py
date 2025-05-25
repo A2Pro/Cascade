@@ -13,6 +13,7 @@ import uuid
 import math
 import re
 
+
 load_dotenv()
 
 MONGO_URI_STRING = os.getenv('MONGO_URI_STRING')
