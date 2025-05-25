@@ -1,12 +1,1 @@
-# Cascade
-Helps groups get together.
-
-ngrok http --url=Cascade.ngrok.dev 3000 . 
-
-Styling:
-
-No spaces between if-statments.
-On backend, space after getting data.
-Space after if/else block.
-
-
+Cascade is a real-time emergency assistance platform that transforms how communities respond to crises by intelligently connecting people who need help with volunteers who can provide it. When someone faces an emergency and needs food, water, shelter, transportation, or medical assistance, they can quickly post a detailed request through the app using their GPS location. Our AI-powered matching system then analyzes all available volunteers and recommends the most suitable helpers based on their proximity, relevant skills, availability, and the urgency of the request.
