@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input, textarea, select {
+  color: #000000 !important; /* Force black text */
+  background-color: #ffffff !important;
+}
+
+::placeholder {
+  color: #6b7280 !important; /* Darker placeholder text for better contrast */
+}
+
+/* Custom styles for Leaflet map markers */
+.user-location-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.request-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Ensure map containers have proper dimensions */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+/* Custom scrollbar for better UX */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Loading animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+/* Custom button hover effects */
+.btn-primary {
+  @apply bg-sky-600 hover:bg-sky-700 text-white font-medium py-2 px-4 rounded-md transition-colors;
+}
+
+.btn-secondary {
+  @apply bg-gray-600 hover:bg-gray-700 text-white font-medium py-2 px-4 rounded-md transition-colors;
+}
+
+.btn-outline {
+  @apply border border-gray-300 hover:bg-gray-50 text-gray-700 font-medium py-2 px-4 rounded-md transition-colors;
+}
+
+/* Card shadows */
+.card-shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.card-shadow-hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Emergency urgency colors */
+.urgency-high {
+  @apply text-red-600 bg-red-50 border-red-200;
+}
+
+.urgency-medium {
+  @apply text-orange-600 bg-orange-50 border-orange-200;
+}
+
+.urgency-low {
+  @apply text-green-600 bg-green-50 border-green-200;
+}
+
+/* Status colors */
+.status-pending {
+  @apply text-yellow-600 bg-yellow-50 border-yellow-200;
+}
+
+.status-in-progress {
+  @apply text-blue-600 bg-blue-50 border-blue-200;
+}
+
+.status-fulfilled {
+  @apply text-green-600 bg-green-50 border-green-200;
+}
+
+/* Mobile responsiveness improvements */
+@media (max-width: 640px) {
+  .mobile-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .mobile-text-sm {
+    font-size: 0.875rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  button, input, textarea, select {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
